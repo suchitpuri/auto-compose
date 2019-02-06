@@ -1,7 +1,6 @@
 FROM python:3.6-slim
 
-ARG AIRFLOW_VERSION=1.10.1
-ARG AIRFLOW_HOME=/usr/local/airflow
+
 ENV SLUGIFY_USES_TEXT_UNIDECODE=yes
 
 RUN set -ex \
@@ -13,6 +12,7 @@ RUN set -ex \
     libssl-dev \
     libffi-dev \
     libpq-dev \
+    curl \
     git \
     ' \
     && apt-get update -yqq \
@@ -22,7 +22,6 @@ RUN set -ex \
     freetds-bin \
     build-essential \
     python3-pip \
-    && useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow \
     && pip install -U pip setuptools wheel \
     && apt-get clean \
     && rm -rf \
@@ -33,10 +32,13 @@ RUN set -ex \
     /usr/share/doc \
     /usr/share/doc-base
 
+
 ADD . /
-RUN pip install apache-airflow==${AIRFLOW_VERSION}
-RUN pip install -e .
+
+RUN  curl -sSL https://sdk.cloud.google.com | bash
+ENV PATH $PATH:/root/google-cloud-sdk/bin
 
 RUN chmod +x /scripts/entrypoint.sh
 
 ENTRYPOINT ["/scripts/entrypoint.sh"]
+

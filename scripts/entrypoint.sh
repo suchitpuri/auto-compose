@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-airflow initdb
-airflow scheduler & exec airflow webserver
+gcloud config set project $PROJECT_ID
+gcloud projects list
+
