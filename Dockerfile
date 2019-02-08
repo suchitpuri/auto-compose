@@ -14,6 +14,7 @@ RUN set -ex \
     libpq-dev \
     curl \
     git \
+    python\
     ' \
     && apt-get update -yqq \
     && apt-get upgrade -yqq \

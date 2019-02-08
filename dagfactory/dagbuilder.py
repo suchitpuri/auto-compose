@@ -26,8 +26,7 @@ class DagBuilder(object):
         dag_params["dag_id"] = self.dag_name
         try:
             dag_params["default_args"]["start_date"] = utils.get_start_date(
-                dag_params["default_args"]["start_date"],
-                dag_params["default_args"].get("timezone", "UTC"),
+                dag_params["default_args"]["start_date"]
             )
         except KeyError as e:
             raise Exception(f"{self.dag_name} config is missing start_date, err: {e}")
