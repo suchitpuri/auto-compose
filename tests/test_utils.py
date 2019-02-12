@@ -1,6 +1,5 @@
 import datetime
 
-import pendulum
 import pytest
 
 from dagfactory import utils
@@ -8,8 +7,6 @@ from dagfactory import utils
 
 class TestGetStartDate(object):
     now = datetime.datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)
-    cet = pendulum.timezone("Europe/Amsterdam")
-    utc = pendulum.timezone("UTC")
 
     def test_date_no_timezone(self):
         expected = datetime.datetime(2018, 2, 1, 0, 0, tzinfo=self.utc)
