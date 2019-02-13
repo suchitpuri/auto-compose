@@ -11,8 +11,8 @@ cat > bq-dag.yml <<- "EOL"
 default:
   default_args:
     owner: 'default_owner'
-    start_date: 2019-08-02
-    email: ['suchitpuri@google.com']
+    # start_date: 2019-08-02
+    email: ['test@test.com']
     email_on_failure: True
     retries: 1
     email_on_retry: True
@@ -21,8 +21,8 @@ default:
 
 bq_dag_complex:
   default_args:
-    owner: 'suchitpuri@google.com'
-    start_date: 2019-08-02
+    owner: 'add_your_ldap'
+    # start_date: 2019-08-02
   description: 'this is an sample bigquery dag which runs every 2 hours'
   tasks:
     query_1:
@@ -52,7 +52,7 @@ bq_dag_complex:
 
 bq_dag_simple:
   default_args:
-    owner: 'suchitpuri@google.com'
+    owner: 'add_your_ldap'
     start_date: 2018-08-02
   description: 'this is an sample bigquery dag which runs every hour'
   schedule_interval: '0 */1 * * *'

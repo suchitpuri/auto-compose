@@ -33,13 +33,8 @@ test: .installed ## Runs unit tests
 .PHONY: docker-build
 docker-build:
 	@echo "==> Building docker image for local testing"
-	@docker build -t dag_factory:latest .
-
-.PHONY: docker-run
-docker-run: docker-build ## Runs local Airflow for testing
-	@docker run -d -e AIRFLOW__CORE__DAGS_FOLDER=/usr/local/airflow/dags -v $(PWD)/examples:/usr/local/airflow/dags -p 8080:8080 --name=dag_factory dag_factory:latest
-	@echo "==> Airflow is running at http://localhost:8080"
+	@docker build -t auto-compose:latest .
 
 .PHONY: docker-stop
 docker-stop: ## Stop Docker container
-	@docker stop dag_factory; docker rm dag_factory
+	@docker stop dag_factory; docker rm auto-compose
