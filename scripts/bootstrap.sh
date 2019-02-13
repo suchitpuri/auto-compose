@@ -11,19 +11,19 @@ cat > bq-dag.yml <<- "EOL"
 default:
   default_args:
     owner: 'default_owner'
-    # start_date: 2019-08-02
+    start_date: 2019-08-02
     email: ['test@test.com']
     email_on_failure: True
     retries: 1
     email_on_retry: True
   max_active_runs: 1
-  schedule_interval: '0 */2 * * *'
+  schedule_interval: '0 * * * */1'
 
 bq_dag_complex:
   default_args:
     owner: 'add_your_ldap'
-    # start_date: 2019-08-02
-  description: 'this is an sample bigquery dag which runs every 2 hours'
+    start_date: 2019-02-14
+  description: 'this is an sample bigquery dag which runs every day'
   tasks:
     query_1:
       operator: airflow.contrib.operators.bigquery_operator.BigQueryOperator
@@ -53,9 +53,9 @@ bq_dag_complex:
 bq_dag_simple:
   default_args:
     owner: 'add_your_ldap'
-    start_date: 2018-08-02
-  description: 'this is an sample bigquery dag which runs every hour'
-  schedule_interval: '0 */1 * * *'
+    start_date: 2019-02-14
+  description: 'this is an sample bigquery dag which runs every 12 hours'
+  schedule_interval: '0 */12 * * *'
   tasks:
     query_1:
       operator: airflow.contrib.operators.bigquery_operator.BigQueryOperator

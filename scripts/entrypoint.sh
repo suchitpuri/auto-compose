@@ -24,5 +24,5 @@ gsutil -m cp -r ../dagfactory $DAG_LOCATION
 gsutil cp /root/$PY_FILE $DAG_LOCATION
 gsutil cp /root/$FILENAME $DAG_LOCATION
 
-echo -e "\e[32mPlease open " $AIRFLOW_URL " to see the dags"
+echo -e "\033[0;31mPlease open " $AIRFLOW_URL " to see the dags"
 

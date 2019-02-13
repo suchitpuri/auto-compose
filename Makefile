@@ -35,6 +35,18 @@ docker-build:
 	@echo "==> Building docker image for local testing"
 	@docker build -t auto-compose:latest .
 
+.PHONY: docker-push
+docker-push:
+	@echo "==> Push docker image to GCR"
+	@docker tag auto-compose:latest gcr.io/pso-suchit/auto-compose
+	@docker push gcr.io/pso-suchit/auto-compose
+
+.PHONY: docker-run
+docker-run:
+	@echo "==> run the docker file and deploy your dag's to cloud composer"
+	chmod +x ./scripts/bootstrap.sh
+	./scripts/bootstrap.sh
+
 .PHONY: docker-stop
 docker-stop: ## Stop Docker container
 	@docker stop dag_factory; docker rm auto-compose
