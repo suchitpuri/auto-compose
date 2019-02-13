@@ -11,7 +11,7 @@ cat > bq-dag.yml <<- "EOL"
 default:
   default_args:
     owner: 'default_owner'
-    start_date: 2019-08-02
+    start_date: 2019-02-14
     email: ['test@test.com']
     email_on_failure: True
     retries: 1
