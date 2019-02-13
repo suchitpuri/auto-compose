@@ -72,7 +72,7 @@ bq_dag_simple:
       dependencies: [query_1]
       use_legacy_sql: false
 EOL
-     YAML="${pwd}/bq-dag.yml"
+     YAML="$(pwd)/bq-dag.yml"
 fi
 
 FILENAME=$(basename $YAML)

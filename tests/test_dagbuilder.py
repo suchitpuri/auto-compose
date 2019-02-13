@@ -1,7 +1,6 @@
 import os
 import datetime
 
-import pendulum
 import pytest
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
@@ -41,7 +40,6 @@ class TestDagBuilder(object):
             },
         },
     }
-    utc = pendulum.timezone("UTC")
 
     def test_get_dag_params(self):
         td = dagbuilder.DagBuilder("test_dag", self.dag_config, self.default_config)
@@ -49,7 +47,7 @@ class TestDagBuilder(object):
             "dag_id": "test_dag",
             "default_args": {
                 "owner": "custom_owner",
-                "start_date": datetime.datetime(2018, 3, 1, 0, 0, tzinfo=self.utc),
+                "start_date": datetime.datetime(2018, 3, 1, 0, 0),
             },
             "description": "this is an example dag",
             "schedule_interval": "0 3 * * *",
