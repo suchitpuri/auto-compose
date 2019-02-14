@@ -1,4 +1,4 @@
-# dag-factory
+# auto-compose
 
 [![Travis CI](https://img.shields.io/travis/ajbosco/dag-factory.svg?style=flat-square)](https://travis-ci.com/suchitpuri/auto-compose)
 [![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/ambv/black)
@@ -12,7 +12,10 @@
   
 ## Installation
 
-To install *dag-factory* run `pip install dag-factory`. It requires docker, Python 3.6.0+ and Apache Airflow 1.9+.
+To run *auto-compose* without checking out the github repository run `/bin/bash -c "$(curl -fsSL  https://raw.githubusercontent.com/suchitpuri/auto-compose/master/scripts/bootstrap.sh)"
+`. It requires docker, Python 3.6.0+ and Apache Airflow 1.9+.
+
+You can also checkout the repository and run `/bin/bash ./scripts/bootstrap.js` 
 
 [![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fsuchitpuri%2Fauto-compose&cloudshell_print=cloudshell-run.txt&cloudshell_open_in_editor=bootstrap.sh)
 
