@@ -14,7 +14,7 @@
 
 To install *dag-factory* run `pip install dag-factory`. It requires docker, Python 3.6.0+ and Apache Airflow 1.9+.
 
-[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fsuchitpuri%2Fauto-compose&cloudshell_open_in_editor=scripts%2Fbootstrap.sh)
+[![Open in Cloud Shell](http://gstatic.com/cloudssh/images/open-btn.svg)](https://console.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fsuchitpuri%2Fauto-compose&cloudshell_print=cloudshell-run.txt&cloudshell_open_in_editor=bootstrap.sh)
 
 
 ## Usage
@@ -67,3 +67,5 @@ And this DAG will be generated and ready to run in Airflow!
 ## Contributing
 
 Contributions are welcome! Just submit a Pull Request or Github Issue.
+
+
